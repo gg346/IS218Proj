@@ -1,19 +1,22 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: extnddthght
- * Date: 2019-04-10
- * Time: 23:49
+ * User: Bhavik
+ * Date: 4/25/2019
+ * Time: 11:40 AM
  */
+
 use takeCSV;
 use setUpWeb;
 use factory;
 use record;
-class Cars
+
+class cars
 {
     static public function start($filename) {
         $records = takeCSV::getRecords($filename);
         $table = setUpWeb::setUp($records);
         echo $table;
     }
+
 }

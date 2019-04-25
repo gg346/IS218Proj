@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: extnddthght
+ * User: Bhavik
  * Date: 2019-04-10
  * Time: 23:45
  */
@@ -9,11 +9,12 @@
 use takeCSV;
 use setUpWeb;
 use Factory;
-use Pokedex;
+use cars;
+
 class record {
-    public function __construct(Array $Pokemon = null, $values = null )
+    public function __construct(Array $Car = null, $values = null )
     {
-        $record = array_combine($Pokemon, $values);
+        $record = array_combine($Car, $values);
         foreach ($record as $property => $value) {
             $this->createProperty($property, $value);
         }
@@ -22,7 +23,7 @@ class record {
         $items = (array) $this;
         return $items;
     }
-    public function createProperty($pokemonName = 'one', $row = 'Number Pokemon Type') {
-        $this->{$pokemonName} = $row;
+    public function createProperty($carName = 'one', $row = 'Model Year') {
+        $this->{$carName} = $row;
     }
 }

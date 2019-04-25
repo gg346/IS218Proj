@@ -1,17 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: extnddthght
- * Date: 2019-04-10
- * Time: 23:49
+ * User: Bhavik
+ * Date: 4/25/2019
+ * Time: 11:38 AM
  */
+
 use takeCSV;
 use setUpWeb;
-use Pokedex;
+use cars;
 use record;
+
 class Factory {
-    public static function create(Array $Pokemon = null, Array $values = null) {
-        $record = new record($Pokemon, $values);
+    public static function create(Array $cars = null, Array $values = null) {
+        $record = new record ($cars, $values);
         return $record;
     }
 }

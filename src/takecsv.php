@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: extnddthght
+ * User: Bhavik
  * Date: 2019-04-10
  * Time: 23:48
  */
@@ -9,20 +9,20 @@
 class takeCSV
 {
     static public function getRecords($filename) {
-        $Pokedex = fopen($filename,"r");
-        $Pokemon = array();
+        $Cars = fopen($filename,"r");
+        $Car = array();
         $num = 0;
-        while(! feof($Pokedex))
+        while(! feof($Cars))
         {
-            $record = fgetcsv($Pokedex);
+            $record = fgetcsv($Cars);
             if($num == 0) {
-                $Pokemon = $record;
+                $Car = $record;
             } else {
-                $records[] = Factory::create($Pokemon, $record);
+                $records[] = Factory::create($Car, $record);
             }
             $num++;
         }
-        fclose($Pokedex);
+        fclose($Cars);
         return $records;
     }
 }
