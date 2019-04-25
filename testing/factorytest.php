@@ -13,10 +13,10 @@ use IS218Proj\Framework\TestCase;
 final class FactoryTest extends TestCase
 {
     public function testFactoryFileExists() {
-        $this->assertFileExists('/G:/Spring 2019/IS218/IS218Proj/src/factory.php');
+        $this->assertFileExists('/G:/Spring 2019/IS218/IS218Proj/src old/factory.php');
     }
     public function testFailure() {
-        $this->assetFileIsReadable('/G:/Spring 2019/IS218/IS218Proj/src/factory.php');
+        $this->assetFileIsReadable('/G:/Spring 2019/IS218/IS218Proj/src old/factory.php');
     }
     public function testFileObject() {
         $this->assertInstanceOf(Factory::create(), new Factory());

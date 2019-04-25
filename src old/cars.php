@@ -11,7 +11,7 @@ use setUpWeb;
 use factory;
 use record;
 
-class cars
+class CarModels
 {
     static public function start($filename) {
         $records = takeCSV::getRecords($filename);
