@@ -27,64 +27,60 @@ require_once '../vendor/autoload.php';
 </head>
 <body>
 
-echo "<div class='container'>";
-    echo "<div class='row-fluid'>";
+<div class='container'>
+    <div class="col-md-12">
+        <div class="page-header">
+            <h1>
+                Find A Car
+            </h1>
+        </div>
+    </div>
+<div class='row-fluid'>
+    <div class='col-md-12'>
+        <table class='table table-striped table-hover table-bordered' style="margin: 100px; padding-top: 20px; padding-left: 360px">
+                <tr>
+                    <th>Year</th>
 
-        echo "<div class='col-xs-6'>";
-            echo "<div class='table-responsive'>";
+                    <th>Make</th>
 
-                echo "<table class='table table-hover table-inverse'>";
+                    <th>Model</th>
+                </tr>
 
-                    echo "<tr>";
-                        echo "<th>Year</th>";
-                        echo "<th>Make</th>";
-                        echo "<th>Model</th>";
-                        echo "</tr>";
-
-                    if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-
-                    echo "<tr>";
-                        echo "<td>" . $row["Year"] . "</td>";
-                        echo "<td>" . $row["Make"] . "</td>";
-                        echo "<td>" . $row["Model"] . "</td>";
-                        echo "</tr>";
-                    }
-                    } else {
-                    echo "0 results";
-                    }
-
-                    echo "</table>";
-
-                echo "<table class='table table-hover table-inverse'>";
-
-
-                    echo "<tr>";
-                        echo "<th>make</th>";
-                        echo "<th>year</th>";
-                        echo "</tr>";
-
-                    if ($result->num_rows > 0) {
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-
-                    echo "<tr>";
-                        echo "<td>" . $row["make"] . "</td>";
-                        echo "<td>" . $row["year"] . "</td>";
-                        echo "</tr>";
-                    }
-                    } else {
-                    echo "0 results";
-                    }
-
-                    echo "</table>";
-                echo "</div>";
-            echo "</div>";
-        /*
-
-mysqli_close($link);
-?>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+                
+        <table class='table table-hover table-inverse'></table>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm ">
+                <?php
+                include('../src/File.php');
+                include('../src/database/SQLconnect.php');
+                $records = File::readCSVtoArray("../data/Cars.csv", 'Make');
+                $table = File::printArrayAsTable($records);
+                echo $table;
+                $pdo = (new SQLiteConnection())->connect();
+                if ($pdo != null)
+                    echo 'Connected to the SQLite database successfully!';
+                else
+                    echo 'Whoops, could not connect to the SQLite database!';
+                $stmt = $pdo->prepare('SELECT * FROM contacts');
+                $stmt->execute();
+                ?>
+                <form action="../src/upload.php" method="post" enctype="multipart/form-data">
+                    Select file to upload:
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload File" name="submit">
+                </form>
+            </div>
+        </div>
+    </div>
         
 </body>
 </html>
