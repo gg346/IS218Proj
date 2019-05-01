@@ -13,5 +13,8 @@
     "php artisan clear-compiled",
     "php artisan optimize",
     "chmod -R 777 public/"
-  ]
+  ],
+  "require": {
+    "twbs/bootstrap": "4.3.1"
+  }
 }
