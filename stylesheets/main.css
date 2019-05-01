@@ -1,0 +1,36 @@
+
+h1{
+    font-family: 'Comic Sans MS', sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+p{
+    font-family: 'Comic Sans MS', sans-serif;
+}
+span{
+    font-family: 'Comic Sans MS', sans-serif;
+}
+.table{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.navbar-nav ml-auto{
+    font-family: 'Poppins', sans-serif;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.navbar-brand text-body{
+    font-family: 'Poppins', sans-serif;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.nav-item{
+    font-family: 'Poppins', sans-serif;
+    padding-top:10px;
+    padding-bottom:10px;
+}

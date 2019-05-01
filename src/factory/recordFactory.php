@@ -6,9 +6,7 @@
  * Time: 12:50 PM
  */
 
-namespace
-use
-
+require ("Record.php");
 class recordFactory
 {
     public static function create(Array $data) {

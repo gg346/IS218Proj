@@ -11,7 +11,7 @@ use setUpWeb;
 use Factory;
 use cars;
 
-class record {
+class ogRecord {
     public function __construct(Array $Car = null, $values = null )
     {
         $record = array_combine($Car, $values);
