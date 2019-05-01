@@ -19,6 +19,8 @@ require_once '../vendor/autoload.php';
 <body>
 <?php
 $obj = new bootstrap('../data/Cars.csv');
+
+
 ?>
 
 </body>
