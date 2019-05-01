@@ -27,33 +27,64 @@ require_once '../vendor/autoload.php';
 </head>
 <body>
 
-<div class="container">
-    <div class="col-md-12">
-        <div class="page-header">
-            <h1>
-                Find A Car
-            </h1>
-        </div>
+echo "<div class='container'>";
+    echo "<div class='row-fluid'>";
+
+        echo "<div class='col-xs-6'>";
+            echo "<div class='table-responsive'>";
+
+                echo "<table class='table table-hover table-inverse'>";
+
+                    echo "<tr>";
+                        echo "<th>Year</th>";
+                        echo "<th>Make</th>";
+                        echo "<th>Model</th>";
+                        echo "</tr>";
+
+                    if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+
+                    echo "<tr>";
+                        echo "<td>" . $row["Year"] . "</td>";
+                        echo "<td>" . $row["Make"] . "</td>";
+                        echo "<td>" . $row["Model"] . "</td>";
+                        echo "</tr>";
+                    }
+                    } else {
+                    echo "0 results";
+                    }
+
+                    echo "</table>";
+
+                echo "<table class='table table-hover table-inverse'>";
 
 
-        <div class="panel panel-success">
-            <div class="panel-heading ">
-            </div>
+                    echo "<tr>";
+                        echo "<th>make</th>";
+                        echo "<th>year</th>";
+                        echo "</tr>";
 
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-12">
+                    if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
 
-                        <table 	id="table"
-                                  data-show-columns="true"
-                                  data-height="460">
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    echo "<tr>";
+                        echo "<td>" . $row["make"] . "</td>";
+                        echo "<td>" . $row["year"] . "</td>";
+                        echo "</tr>";
+                    }
+                    } else {
+                    echo "0 results";
+                    }
 
+                    echo "</table>";
+                echo "</div>";
+            echo "</div>";
+        /*
+
+mysqli_close($link);
+?>
+        
 </body>
 </html>
